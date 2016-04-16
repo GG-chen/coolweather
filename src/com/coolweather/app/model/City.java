@@ -25,7 +25,7 @@ public class City {
 	 public int getId() {
 		 return id;
 	 }
-	 public void setPeovinceId(int provinceId) {
+	 public void setProvinceId(int provinceId) {
 		 this.provinceId = provinceId;
 	 }
 	 public int getProvinceId() {

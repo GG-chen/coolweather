@@ -1,9 +1,11 @@
-package com.coolweather.app.model;
+package com.coolweather.app.db;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.coolweather.app.db.CoolWeatherOpenHelper;
+import com.coolweather.app.model.City;
+import com.coolweather.app.model.County;
+import com.coolweather.app.model.Province;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -46,7 +48,7 @@ public class CoolWeatherDB {
 			ContentValues values = new ContentValues();
 			values.put("province_name", province.getProvinceName());
 			values.put("province_code", province.getProvinceCode());
-			db.insert("province", null, values);
+			db.insert("Province", null, values);
 		}
 	}
 	public List<Province> loadProvinces() {
@@ -83,7 +85,7 @@ public class CoolWeatherDB {
 				city.setId(cursor.getInt(cursor.getColumnIndex("id")));
 				city.setCityName(cursor.getString(cursor.getColumnIndex("city_name")));
 				city.setCityCode(cursor.getString(cursor.getColumnIndex("city_code")));
-				city.setPeovinceId(provinceId);
+				city.setProvinceId(provinceId);
 				list.add(city);
 				
 			}while(cursor.moveToNext());
