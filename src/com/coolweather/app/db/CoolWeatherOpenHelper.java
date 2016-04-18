@@ -14,12 +14,12 @@ public class CoolWeatherOpenHelper extends SQLiteOpenHelper {
 			+ "id integer primary key autoincrement, "
 			+ "city_name text," 
 			+ "city_code text,"
-			+ "province_id text)";
+			+ "province_id integer)";
 	public static final String CREATE_COUNTY = "create table County("
 			+ "id integer primary key autoincrement, "
 			+ "county_name text," 
 			+ "county_code text,"
-			+ "city_id text)";
+			+ "city_id integer)";
 
 	public CoolWeatherOpenHelper(Context context, String name, CursorFactory factory, int version) {
 		super(context, name, factory, version);
